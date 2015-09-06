@@ -90,7 +90,7 @@ ul#navigation {
 	margin-right:-5px;
 	position:relative;
 	width:220px;
-	z-index:999
+    z-index: 999;
 }
 ul#navigation li {
 	border:none;
