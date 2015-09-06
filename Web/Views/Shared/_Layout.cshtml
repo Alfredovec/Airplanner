@@ -1,0 +1,45 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Images/logoicon.ico">
+    <title>Airplanner</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="wrap">
+        <div id="sidebar">
+            <a href="#" id="logo"><img src="~/Images/logo.png" alt=""></a>
+            <ul id="navigation">
+                <li><a href="#" class="active">Fligths</a></li>
+                <li><a href="#" class="">Department</a></li>
+                <li><a href="#" class="">Requests</a></li>
+                <li><a href="#" class="">Staff</a></li>
+                <li><a href="#" class="">Contacts</a></li>
+            </ul>
+        </div>
+
+        <div id="container">
+            <div class="page">
+                <h3 class="page_title">Fligths schedule</h3>
+                <div class="page_content">
+                    @RenderBody()
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>Copyright © <a href="#">Airplanner.com</a> | All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+    <a class="gotop" href="#">Top</a>
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", false)
+</body>
+</html>

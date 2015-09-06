@@ -1,0 +1,100 @@
+﻿@using BLL.Extensions
+@using BLL.Models.Entities
+@using DAL.Managers
+@model IEnumerable<BLL.Models.View.FlightViewModel>
+@{
+    ViewBag.Title = "List";
+}
+<nav class="navbar navbar-default" role="navigation">
+    <form class="navbar-form" role="search">
+        <div class="row">
+            <div class="col-lg-2 navbar-left">
+                <input type="text" class="form-control navbar-left" placeholder="Search by #">
+            </div>
+            <div class="col-lg-4 navbar-left">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle form-control navbar-left" data-toggle="dropdown">From city <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Другое действие</a></li>
+                            <li><a href="#">Что-то иное</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Отдельная ссылка</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Type city here">
+                </div>
+            </div>
+            <div class="col-lg-4 navbar-left">
+                <div class="input-group">
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle form-control navbar-left" data-toggle="dropdown">To city <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Другое действие</a></li>
+                            <li><a href="#">Что-то иное</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Отдельная ссылка</a></li>
+                        </ul>
+                    </div>
+                    <input type="text" class="form-control" placeholder="Type city here">
+                </div>
+            </div>
+            <div class="col-lg-1 navbar-right">
+                <button type="submit" class="btn btn-success navbar-right">Apply</button>
+            </div>
+        </div>
+    </form>
+</nav>
+
+
+@*<div class="input-group-btn">
+
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Действие</a></li>
+                            <li><a href="#">Другое действие</a></li>
+                            <li><a href="#">Что-то иное</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Отдельная ссылка</a></li>
+                        </ul>
+                    </div>
+                    <div class="input-group-btn">
+                        <button type="button" class="btn btn-default dropdown-toggle form-control navbar-left" data-toggle="dropdown">Действие <span class="caret"></span></button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Действие</a></li>
+                            <li><a href="#">Другое действие</a></li>
+                            <li><a href="#">Что-то иное</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">Отдельная ссылка</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </form>
+    </nav>*@
+
+<div class="panel panel-info">
+    <div class="panel-heading">Flights</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var flight in Model)
+            {
+                <tr>
+                    <td>@flight.FlightId</td>
+                    <td>@flight.OutcomeCityName</td>
+                    <td>@flight.DestinationCityName</td>
+                    <td>@flight.DepartureTime.ToAirplaneTime()</td>
+                    <td>@flight.ArrivalTime.ToAirplaneTime()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
