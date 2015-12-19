@@ -1,0 +1,32 @@
+﻿@using System.Web.Optimization
+@model IEnumerable<Web.Models.View.ReportViewModel>
+
+@{
+    ViewBag.Title = "Flights";
+    ViewBag.PageTitle = "Pilots report";
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading">@ViewBag.PageTitle</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Minutes flown</th>
+                <th>Routes</th>
+            </tr>
+        </thead>
+        <tbody id="workers">
+            @foreach (var pilot in Model)
+            {
+                <tr>
+                    <td>@pilot.PilotFirstName</td>
+                    <td>@pilot.PilotLastName</td>
+                    <td>@pilot.MinutesFlown</td>
+                    <td>@{ Html.RenderPartial("_GetPilotRoutesList", pilot.Routes);}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

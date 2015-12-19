@@ -1,0 +1,29 @@
+﻿@using System.Web.Optimization
+@model IEnumerable<Web.Models.View.FlightViewModel>
+@{
+    ViewBag.Title = "Requests";
+    ViewBag.PageTitle = "Requests list";
+}
+
+<div class="panel panel-info">
+    <div class="panel-heading">@ViewBag.Title</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id="flights">
+            @{ Html.RenderPartial("_GetRequestsList", Model); }
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    @Scripts.Render("~/Scripts/flight-script.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.11.4.min.js")
+}

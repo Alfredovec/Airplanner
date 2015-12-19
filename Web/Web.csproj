@@ -44,11 +44,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -56,8 +56,36 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Mvc, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1404.0\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.3\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.1.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
@@ -80,8 +108,20 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.3\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.3\lib\net45\WebMatrix.WebData.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -109,56 +149,90 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AirplannerDb.mdf" />
-    <Content Include="App_Data\AirplannerDb_log.ldf" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\site.css" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="fonts\ostrich-black-webfont.svg" />
-    <Content Include="fonts\ostrich-bold-webfont.svg" />
-    <Content Include="fonts\ostrich-dashed-webfont.svg" />
-    <Content Include="fonts\ostrich-light-webfont.svg" />
-    <Content Include="fonts\ostrich-regular-webfont.svg" />
-    <Content Include="fonts\ostrich-rounded-webfont.svg" />
+    <Content Include="Content\error-style.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\style.css" />
+    <Content Include="Content\themes\base\accordion.css" />
+    <Content Include="Content\themes\base\all.css" />
+    <Content Include="Content\themes\base\autocomplete.css" />
+    <Content Include="Content\themes\base\base.css" />
+    <Content Include="Content\themes\base\button.css" />
+    <Content Include="Content\themes\base\core.css" />
+    <Content Include="Content\themes\base\datepicker.css" />
+    <Content Include="Content\themes\base\dialog.css" />
+    <Content Include="Content\themes\base\draggable.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\menu.css" />
+    <Content Include="Content\themes\base\progressbar.css" />
+    <Content Include="Content\themes\base\resizable.css" />
+    <Content Include="Content\themes\base\selectable.css" />
+    <Content Include="Content\themes\base\selectmenu.css" />
+    <Content Include="Content\themes\base\slider.css" />
+    <Content Include="Content\themes\base\sortable.css" />
+    <Content Include="Content\themes\base\spinner.css" />
+    <Content Include="Content\themes\base\tabs.css" />
+    <Content Include="Content\themes\base\theme.css" />
+    <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Fonts\ostrich-black-webfont.svg" />
+    <Content Include="Fonts\ostrich-bold-webfont.svg" />
+    <Content Include="Fonts\ostrich-dashed-webfont.svg" />
+    <Content Include="Fonts\ostrich-light-webfont.svg" />
+    <Content Include="Fonts\ostrich-regular-webfont.svg" />
+    <Content Include="Fonts\ostrich-rounded-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Images\01.jpg" />
-    <Content Include="Images\02.jpg" />
-    <Content Include="Images\03.jpg" />
-    <Content Include="Images\04.jpg" />
-    <Content Include="Images\05.jpg" />
-    <Content Include="Images\banner.jpg" />
-    <Content Include="Images\carousel-left-arrow.png" />
-    <Content Include="Images\carousel-right-arrow.png" />
+    <Content Include="Images\arrows.png" />
     <Content Include="Images\clouds.jpg" />
-    <Content Include="Images\coded-with-love.png" />
-    <Content Include="Images\contact_us.jpg" />
-    <Content Include="Images\customizable.png" />
-    <Content Include="Images\facebook.png" />
-    <Content Include="Images\for-portfolio.png" />
-    <Content Include="Images\ico-arrow.gif" />
-    <Content Include="Images\image-gallery.png" />
-    <Content Include="Images\jquery-code.png" />
-    <Content Include="Images\linkedin.png" />
+    <Content Include="Images\delete-button.png" />
+    <Content Include="Images\edit-button.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logoicon.ico" />
-    <Content Include="Images\responsive.png" />
-    <Content Include="Images\sending.gif" />
-    <Content Include="Images\twitter.png" />
+    <Content Include="Scripts\airplanner-script.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="NLog.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\editing-script.js" />
+    <Content Include="Scripts\flight-script.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <None Include="Scripts\jquery-1.8.0.intellisense.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.js" />
+    <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\register-script.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\setup.js" />
+    <Content Include="Scripts\staff-script.js" />
     <Content Include="Scripts\waypoints.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -166,11 +240,34 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Builders\View\FlightListModelBuilder.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="Builders\View\FlightViewModelBuilder.cs" />
+    <Compile Include="Builders\View\ReportViewModelBuilder.cs" />
+    <Compile Include="Builders\View\WorkerViewModelBuilder.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\FlightController.cs" />
+    <Compile Include="Controllers\RequestController.cs" />
+    <Compile Include="Controllers\StaffController.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\DropDownInfoExtensions.cs" />
+    <Compile Include="Extensions\SortExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Mappers\View\FlightViewModelMapper.cs" />
+    <Compile Include="Mappers\View\WorkerViewModelMapper.cs" />
+    <Compile Include="Models\Account\LoginModel.cs" />
+    <Compile Include="Models\Account\RegisterModel.cs" />
+    <Compile Include="Models\Attributes\RouteCheckAttribute.cs" />
+    <Compile Include="Models\Attributes\TimeCheckAttribute.cs" />
+    <Compile Include="Models\View\FlightListViewModel.cs" />
+    <Compile Include="Models\View\FlightSearchViewModel.cs" />
+    <Compile Include="Models\View\FlightsTableViewModel.cs" />
+    <Compile Include="Models\View\FlightViewModel.cs" />
+    <Compile Include="Models\View\ReportViewModel.cs" />
+    <Compile Include="Models\View\WorkerViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -178,29 +275,50 @@
     <Content Include="packages.config" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="fonts\ostrich-black-webfont.eot" />
-    <Content Include="fonts\ostrich-black-webfont.ttf" />
-    <Content Include="fonts\ostrich-black-webfont.woff" />
-    <Content Include="fonts\ostrich-bold-webfont.eot" />
-    <Content Include="fonts\ostrich-bold-webfont.ttf" />
-    <Content Include="fonts\ostrich-bold-webfont.woff" />
-    <Content Include="fonts\ostrich-dashed-webfont.eot" />
-    <Content Include="fonts\ostrich-dashed-webfont.ttf" />
-    <Content Include="fonts\ostrich-dashed-webfont.woff" />
-    <Content Include="fonts\ostrich-light-webfont.eot" />
-    <Content Include="fonts\ostrich-light-webfont.ttf" />
-    <Content Include="fonts\ostrich-light-webfont.woff" />
-    <Content Include="fonts\ostrich-regular-webfont.eot" />
-    <Content Include="fonts\ostrich-regular-webfont.ttf" />
-    <Content Include="fonts\ostrich-regular-webfont.woff" />
-    <Content Include="fonts\ostrich-rounded-webfont.eot" />
-    <Content Include="fonts\ostrich-rounded-webfont.ttf" />
-    <Content Include="fonts\ostrich-rounded-webfont.woff" />
+    <Content Include="Fonts\ostrich-black-webfont.eot" />
+    <Content Include="Fonts\ostrich-black-webfont.ttf" />
+    <Content Include="Fonts\ostrich-black-webfont.woff" />
+    <Content Include="Fonts\ostrich-bold-webfont.eot" />
+    <Content Include="Fonts\ostrich-bold-webfont.ttf" />
+    <Content Include="Fonts\ostrich-bold-webfont.woff" />
+    <Content Include="Fonts\ostrich-dashed-webfont.eot" />
+    <Content Include="Fonts\ostrich-dashed-webfont.ttf" />
+    <Content Include="Fonts\ostrich-dashed-webfont.woff" />
+    <Content Include="Fonts\ostrich-light-webfont.eot" />
+    <Content Include="Fonts\ostrich-light-webfont.ttf" />
+    <Content Include="Fonts\ostrich-light-webfont.woff" />
+    <Content Include="Fonts\ostrich-regular-webfont.eot" />
+    <Content Include="Fonts\ostrich-regular-webfont.ttf" />
+    <Content Include="Fonts\ostrich-regular-webfont.woff" />
+    <Content Include="Fonts\ostrich-rounded-webfont.eot" />
+    <Content Include="Fonts\ostrich-rounded-webfont.ttf" />
+    <Content Include="Fonts\ostrich-rounded-webfont.woff" />
     <Content Include="Views\Flight\List.cshtml" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Flight\_GetCitiesList.cshtml" />
+    <Content Include="Views\Flight\_GetFlightsList.cshtml" />
+    <Content Include="Views\Flight\_GetSearchPanel.cshtml" />
+    <Content Include="Views\Flight\Details.cshtml" />
+    <Content Include="Views\Flight\Delete.cshtml" />
+    <Content Include="Views\Staff\List.cshtml" />
+    <Content Include="Views\Staff\_GetWorkersList.cshtml" />
+    <Content Include="Views\Request\List.cshtml" />
+    <Content Include="Views\Request\_GetRequestsList.cshtml" />
+    <Content Include="Views\Flight\_GetTable.cshtml" />
+    <Content Include="Views\Flight\Create.cshtml" />
+    <Content Include="Views\Flight\Edit.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Staff\Create.cshtml" />
+    <Content Include="Views\Staff\Edit.cshtml" />
+    <Content Include="Views\Staff\Delete.cshtml" />
+    <Content Include="Views\Staff\Details.cshtml" />
+    <Content Include="Views\Error\Error.cshtml" />
+    <Content Include="Views\Flight\GetReport.cshtml" />
+    <Content Include="Views\Flight\_GetPilotRoutesList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -208,13 +326,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\clients\" />
-    <Folder Include="Images\photos\" />
-    <Folder Include="Images\prettyPhoto\" />
-    <Folder Include="Images\theme\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj">
       <Project>{39A09D8D-2D89-405F-9C61-22667218FF14}</Project>
@@ -223,6 +335,10 @@
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{DC025E0A-0D0E-4D3E-9B4C-7FA8A4B18F68}</Project>
       <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{BA84C9DE-D72D-4379-9A5E-189971B654BF}</Project>
+      <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

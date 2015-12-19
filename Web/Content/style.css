@@ -1,0 +1,349 @@
+body, p, h1, h2, h3, h4, h5, h6, a, ul, ol, li {
+    border: 0;
+    outline: 0;
+    font-family: Arial, Helvetica, Sans-Serif;
+    color: #fff;
+    vertical-align: baseline;
+    list-style: none;
+    text-decoration: none;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'OstrichSansCondensedLight';
+    src: url('~/../../Fonts/ostrich-light-webfont.eot');
+    src: url('~/../../Fonts/ostrich-light-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-light-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-light-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-light-webfont.svg#OstrichSansCondensedLight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OstrichSansMedium';
+    src: url('~/../../Fonts/ostrich-regular-webfont.eot');
+    src: url('~/../../Fonts/ostrich-regular-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-regular-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-regular-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-regular-webfont.svg#OstrichSansMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OstrichSansBold';
+    src: url('~/../../Fonts/ostrich-bold-webfont.eot');
+    src: url('~/../../Fonts/ostrich-bold-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-bold-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-bold-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-bold-webfont.svg#OstrichSansBold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OstrichSansBlack';
+    src: url('~/../../Fonts/ostrich-black-webfont.eot');
+    src: url('~/../../Fonts/ostrich-black-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-black-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-black-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-black-webfont.svg#OstrichSansBlack') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OstrichSansRoundedMedium';
+    src: url('~/../../Fonts/ostrich-rounded-webfont.eot');
+    src: url('~/../../Fonts/ostrich-rounded-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-rounded-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-rounded-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-rounded-webfont.svg#OstrichSansRoundedMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OstrichSansDashedMedium';
+    src: url('~/../../Fonts/ostrich-dashed-webfont.eot');
+    src: url('~/../../Fonts/ostrich-dashed-webfont.eot?#iefix') format('embedded-opentype'), url('~/../../Fonts/ostrich-dashed-webfont.woff') format('woff'), url('~/../../Fonts/ostrich-dashed-webfont.ttf') format('truetype'), url('~/../../Fonts/ostrich-dashed-webfont.svg#OstrichSansDashedMedium') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background: #619ec2;
+    font-size: 14px;
+}
+
+div#wrap {
+    width: 100%;
+    position: relative;
+    margin: 0 auto !important;
+}
+
+div#sidebar {
+    width: 20%;
+    height: 100%;
+    float: left;
+    background: #2c2c2c;
+    border-right: 1px solid #2e2f2f;
+    position: fixed;
+}
+
+a#logo {
+    text-align: center;
+    display: block;
+    border-bottom: 1px solid #353535;
+    width: 100%;
+    position: relative;
+    z-index: 999;
+    opacity: 1;
+    -webkit-transition: all 300ms;
+    -moz-transition: all 300ms;
+    -o-transition: all 300ms;
+    transition: all 300ms;
+    padding: 15px 0 9px 0;
+}
+
+ul#navigation {
+    margin-top: 25px;
+    position: relative;
+    width: 100%;
+    z-index: 999;
+}
+
+    ul#navigation li {
+        border: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+    }
+
+        ul#navigation li a:link, ul#navigation li a:visited {
+            text-decoration: none;
+            font-family: 'OstrichSansBlack', Arial, sans-serif;
+            margin-bottom: 1px;
+            width: auto;
+            font-size: 18px;
+            text-align: left;
+            padding-left: 50px !important;
+            display: block;
+            transition: all 200ms;
+            -webkit-transition: all 200ms;
+            -moz-transition: all 200ms;
+            -o-transition: all 200ms;
+            padding: 5px 10px 5px 0;
+        }
+
+        ul#navigation li a:hover, ul#navigation li a.active {
+            background: #1b1b1b;
+            color: #FFF;
+        }
+
+div#container {
+    width: 80%;
+    float: right;
+    padding-right: 25px;
+    position: relative;
+    padding-top: 0;
+    background: #619ec2;
+}
+
+div.page {
+    margin-bottom: 5px;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+
+div.page_content {
+    padding: 25px 0 40px 25px;
+}
+
+div#container h3.page_title {
+    font-family: 'OstrichSansBlack';
+    margin-left: 25px;
+    font-size: 35px;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+    text-shadow: 1px 1px 2px #185477;
+    line-height: 2;
+    padding: 5px 0 0 0;
+}
+
+div.footer {
+    text-align: center;
+    font-size: 12px;
+    margin-top: 40px;
+    padding: 15px 0;
+}
+
+.gotop {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    opacity: .3;
+    padding: 10px;
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    z-index: 999;
+    transition: all 300ms;
+    -webkit-transition: all 300ms;
+}
+
+    .gotop:hover {
+        color: #eee;
+        opacity: .7;
+    }
+
+    .gotop.hidden {
+        display: none;
+        opacity: 0;
+    }
+
+a.gotop {
+    text-decoration: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px black;
+}
+
+.first {
+    clear: left;
+}
+
+.last {
+    clear: right;
+}
+
+ul li {
+    line-height: 2;
+    padding-left: 15px;
+}
+
+button {
+    cursor: pointer;
+    margin-right: -2px !important;
+    font-style: normal;
+}
+
+ol li {
+    list-style: decimal inside;
+    padding: 5px 0;
+}
+
+blockquote {
+    border-left: 5px solid #7cb3d3;
+    font-style: italic;
+    padding: 10px;
+    margin: 20px;
+}
+
+div.page tbody img {
+    padding: 5px;
+    border: 1px solid #73aaca;
+    max-width: 94%;
+}
+
+div.page_content {
+    color: #000;
+    font-family: 'OstrichSansBlack';
+    font-size: 1.3em;
+}
+
+.table thead  tr  th {
+    color: blue;
+    font-size: 1.3em;
+}
+
+tbody tr:hover {
+    background: #cdcdff;
+    cursor: pointer;
+}
+
+.logo-img {
+    width: 30px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.controls {
+    width: 90px;
+    cursor: auto;
+}
+
+.decide-controls {
+    width: 160px;
+}
+
+.table {
+    width: 95%;
+    margin: 0 auto;
+}
+
+th > span img {
+    height: 10px;
+    width: 5px;
+}
+
+.account {
+    font-size: 0;
+    margin: 10px 0;
+}
+
+.account>div {
+    margin: 0;
+    background-color: initial;
+    color: #619EC2;
+    width: 50%;
+}
+
+.acc-right, .acc-left {
+    font-family: 'OstrichSansBlack', Arial, sans-serif;
+    display: inline-block;
+    width: 38%;
+    background-color: #1b1b1b;
+    background-color: rgba(27,27,27,0.5);
+    text-align: center;
+    font-size: 20px;
+}
+
+.acc-left {
+    margin: 0 4% 0 8%;
+}
+
+.acc-right {
+    margin: 0 8% 0 4%;
+}
+
+a.acc-right:hover, a.acc-left:hover, a.acc-right.active, a.acc-left.active {
+    background-color: #1b1b1b;
+}
+
+.acc-right div, .acc-left div{
+    margin: 5px;
+}
+
+a:hover, a:visited, a:active, a:link {
+    color: inherit;
+    text-decoration: none;
+}
+
+.text-danger ul {
+    margin: 0 0 40px 5%;
+}
+
+.text-danger ul li {
+    color: #b94a48;
+    font-family: initial;
+    list-style-type: square;
+}
+
+span.field-validation-error {
+    height: 16px;
+    display: block;
+}
+
+div.field-container {
+    height: 50px;
+}
+
+
+
+

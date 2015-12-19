@@ -1,0 +1,14 @@
+﻿body {
+    background: #619ec2;
+    color: white;
+    text-shadow: 1px 1px black;
+    font-size: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.message {
+    font-size: 50px;
+}
+
+

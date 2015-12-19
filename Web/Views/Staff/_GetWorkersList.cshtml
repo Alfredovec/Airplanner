@@ -1,0 +1,22 @@
+﻿@using Web.Extensions
+@model IEnumerable<Web.Models.View.WorkerViewModel>
+
+
+@foreach (var worker in Model)
+{
+    <tr>
+        @Html.Hidden(worker.Id.ToString())
+        <td class="cell-clickable">@worker.PositionName</td>
+        <td class="cell-clickable">@worker.FirstName</td>
+        <td class="cell-clickable">@worker.LastName</td>
+        <td class="cell-clickable">@worker.Age</td>
+        <td class="controls">
+            <a href="@Url.Action("Edit", new {id = worker.Id})">
+                <img src="~/Images/edit-button.png" class="logo-img"/>
+            </a>
+            <a href="@Url.Action("Delete", new {id = worker.Id})">
+                <img src="~/Images/delete-button.png" class="logo-img"/>
+            </a>
+        </td>
+    </tr>
+}

@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Models.Entities.Route>
+
+@{
+    Layout = null;
+}
+
+@foreach (var route in Model)
+{
+    <div>@route.OutcomeCity.CityName - @route.DestinationCity.CityName</div>
+}

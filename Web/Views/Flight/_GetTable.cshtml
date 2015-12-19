@@ -1,0 +1,41 @@
+﻿@using System.Web.Optimization
+@using Models.Enums
+@using Web.Extensions
+@model Web.Models.View.FlightsTableViewModel
+
+@{
+    var sortFields = Enum.GetValues(typeof(FlightSortField)).Cast<FlightSortField>().ToList();
+    var columnNames = new List<string>() { "#", "From", "To", "Departure", "Arrival" };
+}
+
+<thead>
+    <tr>
+        @for (int i = 0; i < sortFields.Count(); i++)
+        {
+            <th>
+                <span>@columnNames[i]</span>
+                <span>
+                    <a data-ajax="true" data-ajax-mode="replace" data-ajax-update="#table"
+                       href="@Url.Action("_SortFlightsList", "Flight",
+                                new
+                                {
+                                    sortField = sortFields.ElementAt(i),
+                                    order = Url.FigureOrder(Model.Order, sortFields.ElementAt(i)==Model.SortField)
+                                })">
+                        <img src="~/Images/arrows.png" />
+                    </a>
+                </span>
+            </th>
+        }
+        @if (Roles.IsUserInRole(User.Identity.Name, "Admin"))
+        {
+            <th></th>
+        }
+    </tr>
+</thead>
+<tbody>
+    @{ Html.RenderPartial("_GetFlightsList", Model.Flights); }
+</tbody>
+
+@section scripts{
+}

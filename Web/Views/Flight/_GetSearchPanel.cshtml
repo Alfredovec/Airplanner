@@ -1,0 +1,39 @@
+﻿@model Web.Models.View.FlightSearchViewModel
+
+@using (Ajax.BeginForm("_GetFlightsList", "Flight", new AjaxOptions() { UpdateTargetId = "table" }, new { @class = "navbar-form", role = "search" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-lg-2 navbar-left">
+            @Html.TextBoxFor(m => m.Number, new { id = "numfield", type = "number", @class = "form-control navbar-left", placeholder = "Search by #" })
+        </div>
+        <div class="col-lg-3 navbar-left">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle form-control navbar-left" data-toggle="dropdown">From <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        @Html.Action("_GetCitiesList", "Flight")
+                    </ul>
+                </div>
+                @Html.TextBoxFor(m => m.OutcomeCity, new { id = "outcomefield", @class = "form-control", placeholder = "Outcome city" })
+            </div>
+        </div>
+        <div class="col-lg-3 navbar-left">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle form-control navbar-left" data-toggle="dropdown">To <span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                        @Html.Action("_GetCitiesList", "Flight")
+                    </ul>
+                </div>
+                @Html.TextBoxFor(m => m.DestinationCity, new { id = "destinationfield", @class = "form-control", placeholder = "Destination city"})
+            </div>
+        </div>
+        <div class="col-lg-1 navbar-right">
+            <button type="submit" class="btn btn-success navbar-right" name="submit">Apply</button>
+        </div>
+        <div class="col-lg-1 navbar-right">
+            <button type="button" class="btn btn-warning navbar-right" name="reset">Reset</button>
+        </div>
+    </div>
+}

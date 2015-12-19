@@ -1,0 +1,133 @@
+﻿@using System.Web.Optimization
+@using Models.Enums
+@using Web.Extensions
+@model Web.Models.View.FlightViewModel
+
+@{
+    ViewBag.Title = "Flights";
+    ViewBag.PageTitle = "Flight creating";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FlightNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.FlightNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FlightNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepartureTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DepartureTime, new { htmlAttributes = new { type="datetime-local", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DepartureTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ArrivalTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ArrivalTime, new { htmlAttributes = new { type = "datetime-local", @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ArrivalTime, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.OutcomeCityName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.OutcomeCityName, Model.DropDownLists["Cities"], "",
+                                        new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.OutcomeCityName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DestinationCityName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.DestinationCityName, Model.DropDownLists["Cities"], "",
+                                        new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.DestinationCityName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstPilotName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FirstPilotName, Model.DropDownLists["First pilots"],
+                                        "", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FirstPilotName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecondPilotName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SecondPilotName, Model.DropDownLists["Second pilots"],
+                                        "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.SecondPilotName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.RadiomanName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.RadiomanName, Model.DropDownLists["Radiomen"],
+                                        "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.RadiomanName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NavigatorName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.NavigatorName, Model.DropDownLists["Navigators"],
+                                        "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.NavigatorName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FirstSteward, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FirstSteward, Model.DropDownLists["Stewards"],
+                                        "", new { @class = "form-control steward" })
+                @Html.ValidationMessageFor(model => model.FirstSteward, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SecondSteward, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.SecondSteward, Model.DropDownLists["Stewards"],
+                                        "", new { @class = "form-control steward" })
+                @Html.ValidationMessageFor(model => model.SecondSteward, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ThirdSteward, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.ThirdSteward, Model.DropDownLists["Stewards"],
+                                        "", new { @class = "form-control steward" })
+                @Html.ValidationMessageFor(model => model.ThirdSteward, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@section scripts{
+    @Scripts.Render("~/Scripts/flight-script.js")
+}

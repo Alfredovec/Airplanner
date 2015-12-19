@@ -1,4 +1,6 @@
-﻿@using System.Web.Optimization
+﻿@using System.IdentityModel.Claims
+@using System.Web.Optimization
+@using System.Web.UI.WebControls
 <!DOCTYPE html>
 
 <html>
@@ -6,25 +8,43 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="~/Images/logoicon.ico">
-    <title>Airplanner</title>
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
 </head>
 <body>
     <div id="wrap">
         <div id="sidebar">
             <a href="#" id="logo"><img src="~/Images/logo.png" alt=""></a>
+            <div class="account">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="acc-left">
+                        <div>Hi, @User.Identity.Name!</div>
+                    </div>
+                    <a class="acc-right" href="@Url.Action("Logoff", "Account")">
+                        <div>Log off</div>
+                    </a>
+                }
+                else
+                {
+                    <a class="acc-left" href="@Url.Action("Login", "Account")">
+                        <div>Login</div>
+                    </a>
+                    <a class="acc-right" href="@Url.Action("Register", "Account")">
+                        <div>Register</div>
+                    </a>
+                }
+            </div>
             <ul id="navigation">
-                <li><a href="#" class="active">Fligths</a></li>
-                <li><a href="#" class="">Department</a></li>
-                <li><a href="#" class="">Requests</a></li>
-                <li><a href="#" class="">Staff</a></li>
-                <li><a href="#" class="">Contacts</a></li>
+                <li>@Html.ActionLink("Flights", "List", "Flight")</li>
+                <li>@Html.ActionLink("Requests", "List", "Request")</li>
+                <li>@Html.ActionLink("Staff", "List", "Staff")</li>
             </ul>
         </div>
 
         <div id="container">
             <div class="page">
-                <h3 class="page_title">Fligths schedule</h3>
+                <h3 class="page_title">@ViewBag.PageTitle</h3>
                 <div class="page_content">
                     @RenderBody()
                 </div>
@@ -36,10 +56,12 @@
         </div>
     </div>
     <a class="gotop" href="#">Top</a>
-
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+    @Scripts.Render("~/Scripts/jquery-ui-1.11.4.min.js")
+    @Scripts.Render("~/Scripts/airplanner-script.js")
     @RenderSection("scripts", false)
 </body>
 </html>

@@ -1,0 +1,98 @@
+﻿@model Web.Models.View.FlightViewModel
+
+@{
+    ViewBag.Title = "Flights";
+    ViewBag.PageTitle = "Flight details";
+}
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DepartureTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DepartureTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ArrivalTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ArrivalTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OutcomeCityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OutcomeCityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DestinationCityName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DestinationCityName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstPilotName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstPilotName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondPilotName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondPilotName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NavigatorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NavigatorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RadiomanName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RadiomanName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstSteward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstSteward)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecondSteward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecondSteward)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThirdSteward)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThirdSteward)
+        </dd>
+    </dl>
+</div>

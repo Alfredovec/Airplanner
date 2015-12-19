@@ -1,0 +1,21 @@
+﻿@using Models.Enums
+@using Web.Extensions
+@model IEnumerable<Web.Models.View.FlightViewModel>
+
+
+@foreach (var request in Model)
+{
+    <tr>
+        @Html.Hidden(request.Id.ToString())
+        <td class="cell-clickable">@request.OutcomeCityName</td>
+        <td class="cell-clickable">@request.DestinationCityName</td>
+        <td class="cell-clickable">@request.DepartureTime.ToAirplaneTime()</td>
+        <td class="cell-clickable">@request.ArrivalTime.ToAirplaneTime()</td>
+        <td class="decide-controls">
+            <div class="btn-group">
+                <input type="button" class="btn btn-success btn-lg" value="Accept" onclick=" location.href = '@Url.Action("Decide", "Request", new { id = request.Id, status = FlightStatus.Accepted })' "/>
+                <input type="button" class="btn btn-danger btn-lg" value="Deny" onclick=" location.href = '@Url.Action("Decide", "Request", new { id = request.Id, status = FlightStatus.Denied })' "/>
+            </div>
+        </td>
+    </tr>
+}

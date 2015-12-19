@@ -49,18 +49,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Managers\AirplannerManager.cs" />
+    <Compile Include="AirplannerContext.cs" />
+    <Compile Include="AirplannerRepository.cs" />
+    <Compile Include="DbInitializer.cs" />
+    <Compile Include="IAirplannerRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BLL\BLL.csproj">
-      <Project>{39A09D8D-2D89-405F-9C61-22667218FF14}</Project>
-      <Name>BLL</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{BA84C9DE-D72D-4379-9A5E-189971B654BF}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

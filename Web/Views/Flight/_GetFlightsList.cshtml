@@ -1,0 +1,26 @@
+﻿@using Web.Extensions
+@model IEnumerable<Web.Models.View.FlightViewModel>
+
+
+@foreach (var flight in Model)
+{
+    <tr>
+        @Html.Hidden(flight.Id.ToString())
+        <td class="cell-clickable">@flight.FlightNumber</td>
+        <td class="cell-clickable">@flight.OutcomeCityName</td>
+        <td class="cell-clickable">@flight.DestinationCityName</td>
+        <td class="cell-clickable">@flight.DepartureTime.ToAirplaneTime()</td>
+        <td class="cell-clickable">@flight.ArrivalTime.ToAirplaneTime()</td>
+        @if (Roles.IsUserInRole(User.Identity.Name, "Admin"))
+        {
+            <td class="controls">
+                <a href="@Url.Action("Edit", new {id = flight.Id})">
+                    <img src="~/Images/edit-button.png" class="logo-img" />
+                </a>
+                <a href="@Url.Action("Delete", new {id = flight.Id})">
+                    <img src="~/Images/delete-button.png" class="logo-img" />
+                </a>
+            </td>
+        }
+    </tr>
+}
